@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>YurTeam — O'zbekiston bo'ylab sayohatlar</title>
+<meta name="description" content="YurTeam: O'zbekiston viloyatlari bo'ylab tur paketlar. Samarqand, Buxoro, Xiva, Farg'ona vodiysi, Surxondaryo va boshqa joylarga sayohatga yoziling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F9FB;--surf:#fff;--ink:#0C2247;--mut:#4F5F7A;--lap:#12356F;--tur:#0E8F8C;--gold:#E8A21F;--line:#DCE3EC;--hero1:#0C2A5E;--hero2:#0E8F8C;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0A1528;--surf:#10203B;--ink:#EAF0FA;--mut:#9DB0CE;--line:#223457;--lap:#8FB4F5;--tur:#35C2BE;--hero1:#06122A;--hero2:#0B6F6D}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0A1528;--surf:#10203B;--ink:#EAF0FA;--mut:#9DB0CE;--line:#223457;--lap:#8FB4F5;--tur:#35C2BE;--hero1:#06122A;--hero2:#0B6F6D}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Manrope,system-ui,sans-serif}
+h1,h2,h3{font-family:Unbounded,Manrope,sans-serif;line-height:1.15;margin:0}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:20;background:var(--hero1);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:700 20px Unbounded,sans-serif;text-decoration:none;color:#fff}
+.logo b{color:var(--gold)}
+nav a{color:#DDE8F8;text-decoration:none;margin-left:22px;font-weight:500;font-size:15px}
+nav a:hover{color:var(--gold)}
+@media(max-width:640px){nav a:not(.cta){display:none}}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--gold);color:#1B1400;font:700 15px Manrope,sans-serif;padding:13px 24px;border-radius:999px;text-decoration:none}
+.btn:hover{filter:brightness(1.07)}
+.btn.sec{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+nav .cta{background:var(--gold);color:#1B1400;padding:8px 16px;border-radius:999px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.lang{margin-left:18px;display:inline-flex;gap:3px}
+.lang button{background:none;border:1px solid rgba(255,255,255,.4);color:#fff;font:700 12px Manrope,sans-serif;padding:4px 8px;border-radius:8px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--gold);color:#1B1400;border-color:var(--gold)}
+.hero{background:linear-gradient(160deg,var(--hero1) 40%,var(--hero2));color:#fff;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding-top:64px;padding-bottom:72px}
+.hero h1{font-size:clamp(30px,5vw,54px);font-weight:700}
+.hero p{font-size:18px;color:#D3E3F7;max-width:520px;margin:20px 0 30px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.arch{width:100%;max-width:380px;justify-self:center}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr;padding-top:40px}.arch{max-width:260px;order:-1}}
+.stats{display:flex;gap:34px;flex-wrap:wrap;margin-top:38px;color:#CFE0F5;font-size:14px}
+.stats b{display:block;font:700 22px Unbounded,sans-serif;color:#fff}
+section{padding:70px 0}
+.sh{max-width:620px;margin-bottom:32px}
+.sh h2{font-size:clamp(24px,3.4vw,36px)}
+.sh p{color:var(--mut);margin:12px 0 0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.chip{border:1.5px solid var(--line);background:var(--surf);color:var(--ink);padding:8px 16px;border-radius:999px;font:500 14px Manrope,sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--lap);border-color:var(--lap);color:#fff}
+:root[data-theme=dark] .chip[aria-pressed=true]{color:#06122A}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.art{height:150px;position:relative;display:flex;align-items:flex-end;padding:14px}
+.art::before{content:"";position:absolute;inset:0;opacity:.22;background:repeating-conic-gradient(from 45deg at 50% 50%,#fff 0 12.5%,transparent 0 25%) 0 0/34px 34px}
+.tag{position:relative;background:rgba(255,255,255,.92);color:#0C2247;font-weight:700;font-size:13px;padding:5px 12px;border-radius:999px}
+.card .in{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:18px}
+.card p{margin:0;color:var(--mut);font-size:14.5px}
+.meta{display:flex;gap:14px;font-size:13.5px;color:var(--mut);flex-wrap:wrap}
+.foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px}
+.price{font:700 18px Unbounded,sans-serif;color:var(--tur)}
+.price small{display:block;font:400 12px Manrope;color:var(--mut)}
+.card .btn{padding:10px 18px;font-size:14px}
+.why{background:var(--surf);border-block:1px solid var(--line)}
+.why .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.why h3{font-size:16px;margin:8px 0}
+.why p{margin:0;color:var(--mut);font-size:15px}
+.ic{width:44px;height:44px;border-radius:12px;background:var(--lap);color:#fff;display:grid;place-items:center;font-size:22px}
+:root[data-theme=dark] .ic{color:#06122A}
+.book{background:linear-gradient(160deg,var(--hero1),var(--hero2));color:#fff}
+.book .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:800px){.book .wrap{grid-template-columns:1fr}}
+.book h2{font-size:clamp(24px,3.4vw,36px)}
+.book p{color:#D3E3F7}
+form{background:var(--surf);color:var(--ink);padding:26px;border-radius:22px;display:grid;gap:14px}
+label{font-weight:700;font-size:14px;display:grid;gap:6px}
+input,select{font:400 16px Manrope,sans-serif;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ok{display:none;background:var(--surf);color:var(--ink);padding:26px;border-radius:22px}
+.ok h3{color:var(--tur);margin-bottom:10px}
+.ok pre{white-space:pre-wrap;background:var(--bg);padding:12px;border-radius:12px;font:14px/1.5 Manrope,sans-serif}
+.ok .btn{margin:6px 8px 0 0}
+footer{background:var(--hero1);color:#B9CBE6;padding:34px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#fff}
+@media(prefers-reduced-motion:no-preference){.arch{animation:rise .9s ease-out both}@keyframes rise{from{opacity:0;transform:translateY(24px)}}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#">Yur<b>Team</b></a>
+<nav><a href="#turlar">Turlar</a><a href="#nega">Nega biz</a><a href="#yozilish" class="cta">Yozilish</a><span class="lang" role="group" aria-label="Til"><button data-l="uz">UZ</button><button data-l="en">EN</button><button data-l="ru">RU</button></span></nav></div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+<div>
+<h1>Vatanni biz bilan kashf eting</h1>
+<p>Samarqand ko'k gumbazlaridan Xiva devorlarigacha, Chimyon tog'laridan Orol bo'yigacha — O'zbekiston viloyatlari bo'ylab qulay va ishonchli sayohatlar.</p>
+<div class="row"><a class="btn" href="#turlar">Turlarni ko'rish</a><a class="btn sec" href="#yozilish">Sayohatga yozilish</a></div>
+<div class="stats"><div><b>12</b>viloyat yo'nalishi</div><div><b>9</b>tayyor tur paket</div><div><b>24/7</b>aloqa</div></div>
+</div>
+<svg class="arch" viewBox="0 0 300 360" role="img" aria-label="Milliy naqshli peshtoq">
+    <defs>
+      <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#F6C25B"/>
+        <stop offset="1" stop-color="#E8A21F"/>
+      </linearGradient>
+      <clipPath id="arch-clip">
+        <path d="M20 350V150Q20 20 150 8Q280 20 280 150V350Z"/>
+      </clipPath>
+    </defs>
+    
+    <path d="M20 350V150Q20 20 150 8Q280 20 280 150V350Z" fill="none" stroke="url(#g)" stroke-width="5"/>
+    
+    <image href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUhOwG_Iz4GGjJfx6bz6RpBJnIrENZMpLR1x_vojj3Sw&s=10" x="0" y="0" width="300" height="360" preserveAspectRatio="xMidYMid slice" clip-path="url(#arch-clip)"/>
+  </svg>
+</div></div>
+
+<section id="turlar"><div class="wrap">
+<div class="sh"><h2>Tur paketlar</h2><p>Yo'nalishni tanlang — yo'l, mehmonxona va gid xizmati narxga kiritilgan.</p></div>
+<div class="chips" id="chips" role="group" aria-label="Viloyat bo'yicha filtr"></div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section class="why" id="nega"><div class="wrap">
+<div class="sh"><h2>Nega YurTeam</h2></div>
+<div class="grid">
+<div><div class="ic">🧭</div><h3>Mahalliy gidlar</h3><p>Har bir viloyatni yaxshi biladigan, shu joyda o'sgan gidlar.</p></div>
+<div><div class="ic">🚐</div><h3>Qulay transport</h3><p>Konditsionerli avtobus va mikroavtobuslar, Afrosiyob poyezdi bilan yo'nalishlar.</p></div>
+<div><div class="ic">💳</div><h3>Aniq narx</h3><p>Yashirin to'lovlarsiz. Avval 30% to'lang, qolganini sayohat oldidan.</p></div>
+<div><div class="ic">👨‍👩‍👧</div><h3>Oila va guruhlar uchun</h3><p>Bolalar, keksalar va do'stlar guruhi uchun mos dastur tuzamiz.</p></div>
+</div></div></section>
+
+<section class="book" id="yozilish"><div class="wrap">
+<div><h2>Sayohatga yoziling</h2><p>Formani to'ldiring — menejerimiz aloqaga chiqib, sanani tasdiqlaydi va to'lov usulini tushuntiradi.</p>
+<p>📞 +998 99 837 03 24<br>✈️ Telegram: @yurteamadmin <br>📍 Toshkent, O'zbekiston</p></div>
+<div>
+<form id="f">
+<label>Ismingiz<input name="name" required autocomplete="name" placeholder="Masalan, Aziza"></label>
+<label>Telefon raqami<input name="phone" required type="tel" autocomplete="tel" placeholder="+998 __ ___ __ __"></label>
+<label>Tur paket<select name="tour" id="sel"></select></label>
+<div class="two"><label>Sana<input name="date" type="date" required></label><label>Odamlar soni<input name="n" type="number" min="1" max="40" value="2" required></label></div>
+<button class="btn" type="submit">Yozilish</button>
+</form>
+<div class="ok" id="ok" role="status" aria-live="polite"><h3>Buyurtma tayyor</h3><p>Pastdagi xabarni Telegram orqali yuboring yoki qo'ng'iroq qiling — shunda yozilishingiz tasdiqlanadi.</p><pre id="msg"></pre>
+<a class="btn" id="tg" target="_blank" rel="noopener" href="#">Telegramda yuborish</a><a class="btn" id="em" href="#">Emailga yuborish</a><a class="btn" id="gm" target="_blank" rel="noopener" href="#">Gmail orqali</a><a class="btn" href="tel:+998998370324">Qo'ng'iroq qilish</a></div>
+</div></div></section>
+</main>
+<footer><div class="wrap"><div>© 2026 YurTeam. O'zbekiston ichki turizmi.</div><div><a href="#turlar">Turlar</a> · <a href="#yozilish">Yozilish</a></div></div></footer>
+
+<script>
+var T=[
+{n:"Samarqand klassikasi",r:"Samarqand",d:3,p:1450000,c:"#12356F,#0E8F8C",t:"Registon, Shohizinda, Go'ri Amir va Ulug'bek rasadxonasi. Milliy oshxona va hunarmandlar mahallasi.",g:"Madaniy"},
+{n:"Buxoro — jonli tarix",r:"Buxoro",d:3,p:1390000,c:"#7A3B12,#E8A21F",t:"Ark qal'asi, Poi Kalon, Lyabi-Hovuz va savdo gumbazlari. Kechqurun eski shahar bo'ylab sayr.",g:"Madaniy"},
+{n:"Xiva — ochiq osmon muzeyi",r:"Xorazm",d:3,p:1520000,c:"#0E6E6B,#E8A21F",t:"Ichan-Qal'a, Kalta-Minor, Juma masjidi. Xorazm oshxonasi va ustaxonalar.",g:"Madaniy"},
+{n:"Buyuk ipak yo'li: 3 shahar",r:"Samarqand",d:7,p:3900000,c:"#0C2A5E,#E8A21F",t:"Toshkent → Samarqand → Buxoro → Xiva. Afrosiyob poyezdi va avtobus bilan eng mashhur marshrut.",g:"Madaniy"},
+{n:"Chimyon va Chorvoq",r:"Toshkent",d:1,p:480000,c:"#1B6E9C,#7FD6C8",t:"Chorvoq suv ombori, tog' havosi, Chimyon yo'laklari va piknik. Bir kunlik dam olish.",g:"Tabiat"},
+{n:"Farg'ona vodiysi",r:"Farg'ona",d:4,p:1980000,c:"#8C2F4B,#F0A35E",t:"Marg'ilon atlas ustaxonasi, Rishton kulolchiligi, Qo'qon xon saroyi va Namangan bozorlari.",g:"Madaniy"},
+{n:"Surxondaryo: Sherobod va Termiz",r:"Surxondaryo",d:4,p:2150000,c:"#9A5B1E,#E8C26B",t:"Termiz buddaviy yodgorliklari, Sangardak sharsharasi va Boysun tog'lari.",g:"Tabiat"},
+{n:"Shahrisabz va Qashqadaryo",r:"Qashqadaryo",d:2,p:890000,c:"#2F5E3A,#E8A21F",t:"Oqsaroy, Amir Temur tug'ilgan joy va Hisor tog'lari bo'ylab yo'l.",g:"Madaniy"},
+{n:"Nurota va Aydarko'l",r:"Navoiy",d:2,p:760000,c:"#B5762A,#2B7FA8",t:"Yurtada tunash, tuya sayri, Aydarko'lda cho'milish va Nurota ziyoratgohi.",g:"Tabiat"}
+];
+var L="uz";try{L=localStorage.getItem("yt")||"uz"}catch(e){}
+var R=[
+["YurTeam — O'zbekiston bo'ylab sayohatlar","YurTeam — Tours across Uzbekistan","YurTeam — путешествия по Узбекистану"],
+["Turlar","Tours","Туры"],["Nega biz","Why us","Почему мы"],["Yozilish","Book now","Записаться"],["Til","Language","Язык"],
+["Vatanni biz bilan kashf eting","Discover Uzbekistan with us","Откройте Узбекистан вместе с нами"],
+["Samarqand ko'k gumbazlaridan Xiva devorlarigacha, Chimyon tog'laridan Orol bo'yigacha — O'zbekiston viloyatlari bo'ylab qulay va ishonchli sayohatlar.","From the blue domes of Samarkand to the walls of Khiva, from the Chimgan mountains to the Aral shores — comfortable, reliable trips across the regions of Uzbekistan.","От синих куполов Самарканда до стен Хивы, от гор Чимгана до берегов Арала — удобные и надёжные поездки по регионам Узбекистана."],
+["Turlarni ko'rish","Browse tours","Смотреть туры"],["Sayohatga yozilish","Book a trip","Записаться на поездку"],
+["viloyat yo'nalishi","regional routes","региональных маршрутов"],["tayyor tur paket","ready tour packages","готовых тура"],["aloqa","support","поддержка"],
+["Sharq peshtoqi naqshi","Eastern portal ornament","Восточный орнамент-портал"],
+["Tur paketlar","Tour packages","Пакеты туров"],["Yo'nalishni tanlang — yo'l, mehmonxona va gid xizmati narxga kiritilgan.","Choose a route — transport, hotel and guide are included in the price.","Выберите маршрут — дорога, отель и гид уже включены в цену."],
+["Viloyat bo'yicha filtr","Filter by region","Фильтр по региону"],
+["Nega YurTeam","Why YurTeam","Почему YurTeam"],
+["Mahalliy gidlar","Local guides","Местные гиды"],["Har bir viloyatni yaxshi biladigan, shu joyda o'sgan gidlar.","Guides who grew up in the region and know it inside out.","Гиды, выросшие в регионе и знающие его досконально."],
+["Qulay transport","Comfortable transport","Удобный транспорт"],["Konditsionerli avtobus va mikroavtobuslar, Afrosiyob poyezdi bilan yo'nalishlar.","Air-conditioned buses and minibuses, plus routes by Afrosiyob high-speed train.","Автобусы и микроавтобусы с кондиционером, маршруты на поезде «Афросиёб»."],
+["Aniq narx","Clear pricing","Прозрачная цена"],["Yashirin to'lovlarsiz. Avval 30% to'lang, qolganini sayohat oldidan.","No hidden fees. Pay 30% upfront and the rest before departure.","Без скрытых платежей. 30% предоплата, остальное — перед поездкой."],
+["Oila va guruhlar uchun","For families and groups","Для семей и групп"],["Bolalar, keksalar va do'stlar guruhi uchun mos dastur tuzamiz.","We design programs for children, seniors and groups of friends.","Составим программу для детей, пожилых людей и компаний друзей."],
+["Sayohatga yoziling","Book your trip","Запишитесь на поездку"],["Formani to'ldiring — menejerimiz aloqaga chiqib, sanani tasdiqlaydi va to'lov usulini tushuntiradi.","Fill in the form — our manager will contact you, confirm the date and explain how to pay.","Заполните форму — менеджер свяжется с вами, подтвердит дату и объяснит способ оплаты."],
+["📍 Toshkent, O'zbekiston","📍 Tashkent, Uzbekistan","📍 Ташкент, Узбекистан"],
+["Ismingiz","Your name","Ваше имя"],["Masalan, Aziza","For example, Aziza","Например, Азиза"],["Telefon raqami","Phone number","Номер телефона"],["Tur paket","Tour package","Тур"],["Sana","Date","Дата"],["Odamlar soni","Number of people","Количество человек"],
+["Buyurtma tayyor","Your request is ready","Заявка готова"],["Pastdagi xabarni Telegram orqali yuboring yoki qo'ng'iroq qiling — shunda yozilishingiz tasdiqlanadi.","Send the message below via Telegram or call us — then your booking will be confirmed.","Отправьте сообщение ниже в Telegram или позвоните нам — и ваша запись будет подтверждена."],
+["Telegramda yuborish","Send on Telegram","Отправить в Telegram"],["Qo'ng'iroq qilish","Call us","Позвонить"],["Emailga yuborish","Send by email","Отправить по e-mail"],["Gmail orqali","Via Gmail","Через Gmail"],
+["© 2026 YurTeam. O'zbekiston ichki turizmi.","© 2026 YurTeam. Domestic tourism in Uzbekistan.","© 2026 YurTeam. Внутренний туризм Узбекистана."],
+["Hammasi","All","Все"],["Samarqand","Samarkand","Самарканд"],["Buxoro","Bukhara","Бухара"],["Xorazm","Khorezm","Хорезм"],["Toshkent","Tashkent","Ташкент"],["Farg'ona","Fergana","Фергана"],["Surxondaryo","Surkhandarya","Сурхандарья"],["Qashqadaryo","Kashkadarya","Кашкадарья"],["Navoiy","Navoi","Навои"],
+["Madaniy","Cultural","Культурный"],["Tabiat","Nature","Природа"],
+["kun","days","дн."],["kishi","people","чел."],["bir kishi uchun","per person","на человека"],["so'm","UZS","сум"],
+["Samarqand klassikasi","Samarkand classics","Классика Самарканда"],["Registon, Shohizinda, Go'ri Amir va Ulug'bek rasadxonasi. Milliy oshxona va hunarmandlar mahallasi.","Registan, Shah-i-Zinda, Gur-Emir and the Ulugh Beg Observatory. National cuisine and the artisans' quarter.","Регистан, Шахи-Зинда, Гур-Эмир и обсерватория Улугбека. Национальная кухня и квартал ремесленников."],
+["Buxoro — jonli tarix","Bukhara — living history","Бухара — живая история"],["Ark qal'asi, Poi Kalon, Lyabi-Hovuz va savdo gumbazlari. Kechqurun eski shahar bo'ylab sayr.","The Ark fortress, Poi Kalon, Lyabi-Hauz and the trading domes. An evening walk through the old town.","Крепость Арк, Пои-Калян, Ляби-Хауз и торговые купола. Вечерняя прогулка по старому городу."],
+["Xiva — ochiq osmon muzeyi","Khiva — an open-air museum","Хива — музей под открытым небом"],["Ichan-Qal'a, Kalta-Minor, Juma masjidi. Xorazm oshxonasi va ustaxonalar.","Itchan Kala, Kalta Minor and the Juma Mosque. Khorezm cuisine and craft workshops.","Ичан-Кала, Кальта-Минор, мечеть Джума. Хорезмская кухня и мастерские."],
+["Buyuk ipak yo'li: 3 shahar","Silk Road: 3 cities","Великий шёлковый путь: 3 города"],["Toshkent → Samarqand → Buxoro → Xiva. Afrosiyob poyezdi va avtobus bilan eng mashhur marshrut.","Tashkent → Samarkand → Bukhara → Khiva. The most popular route by Afrosiyob train and bus.","Ташкент → Самарканд → Бухара → Хива. Самый популярный маршрут на поезде «Афросиёб» и автобусе."],
+["Chimyon va Chorvoq","Chimgan and Charvak","Чимган и Чарвак"],["Chorvoq suv ombori, tog' havosi, Chimyon yo'laklari va piknik. Bir kunlik dam olish.","Charvak reservoir, mountain air, Chimgan trails and a picnic. A relaxing one-day escape.","Чарвакское водохранилище, горный воздух, тропы Чимгана и пикник. Отдых на один день."],
+["Farg'ona vodiysi","Fergana Valley","Ферганская долина"],["Marg'ilon atlas ustaxonasi, Rishton kulolchiligi, Qo'qon xon saroyi va Namangan bozorlari.","Margilan atlas silk workshop, Rishtan pottery, the Kokand Khan's Palace and Namangan bazaars.","Мастерская атласа в Маргилане, гончары Риштана, дворец хана в Коканде и базары Намангана."],
+["Surxondaryo: Sherobod va Termiz","Surkhandarya: Sherabad and Termez","Сурхандарья: Шерабад и Термез"],["Termiz buddaviy yodgorliklari, Sangardak sharsharasi va Boysun tog'lari.","Buddhist monuments of Termez, the Sangardak waterfall and the Boysun mountains.","Буддийские памятники Термеза, водопад Сангардак и горы Байсуна."],
+["Shahrisabz va Qashqadaryo","Shakhrisabz and Kashkadarya","Шахрисабз и Кашкадарья"],["Oqsaroy, Amir Temur tug'ilgan joy va Hisor tog'lari bo'ylab yo'l.","Ak-Saray Palace, Amir Timur's birthplace and a road through the Hissar mountains.","Дворец Ак-Сарай, родина Амира Темура и дорога через Гиссарские горы."],
+["Nurota va Aydarko'l","Nurata and Aydarkul","Нурата и Айдаркуль"],["Yurtada tunash, tuya sayri, Aydarko'lda cho'milish va Nurota ziyoratgohi.","A night in a yurt, a camel ride, swimming in Aydarkul and the Nurata shrine.","Ночёвка в юрте, поездка на верблюдах, купание на Айдаркуле и святыня Нурата."]
+];
+var D={};R.forEach(function(r){D[r[0]]=[r[1],r[2]]});
+function tr(s){return L==="uz"||!D[s]?s:D[s][L==="en"?0:1]}
+function fillSel(){var v=$("sel").value||0;$("sel").innerHTML=T.map(function(x,i){return '<option value="'+i+'">'+tr(x.n)+' — '+fm(x.p)+' '+tr("so'm")+'</option>'}).join("");$("sel").value=v}
+function msgText(x,d,n,s){var a=[["Assalomu alaykum! YurTeam turiga yozilmoqchiman.","Tur","Sana","Odamlar","Jami","Ism","Telefon"],["Hello! I'd like to book a YurTeam tour.","Tour","Date","People","Total","Name","Phone"],["Здравствуйте! Хочу записаться на тур YurTeam.","Тур","Дата","Человек","Итого","Имя","Телефон"]][L==="uz"?0:L==="en"?1:2];return a[0]+"\n"+a[1]+": "+tr(x.n)+"\n"+a[2]+": "+d.get("date")+"\n"+a[3]+": "+n+"\n"+a[4]+": "+fm(s)+" "+tr("so'm")+"\n"+a[5]+": "+d.get("name")+"\n"+a[6]+": "+d.get("phone")}
+function setLang(l){L=l;try{localStorage.setItem("yt",l)}catch(e){}
+document.documentElement.lang=l;document.title=tr("YurTeam — O'zbekiston bo'ylab sayohatlar");
+var w=document.createTreeWalker(document.body,4),n,a=[];while(n=w.nextNode())a.push(n);
+a.forEach(function(n){if(n.parentNode.closest("script,#grid,#chips,#sel,#msg"))return;if(n._r===undefined)n._r=n.nodeValue;var k=n._r.trim();n.nodeValue=D[k]?n._r.replace(k,tr(k)):n._r});
+document.querySelectorAll("[placeholder],[aria-label]").forEach(function(e){["placeholder","aria-label"].forEach(function(at){if(e.hasAttribute(at)){e["_"+at]=e["_"+at]||e.getAttribute(at);e.setAttribute(at,tr(e["_"+at]))}})});
+document.querySelectorAll("[data-l]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.l===l)});
+draw();fillSel()}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-l]");if(b)setLang(b.dataset.l)});
+var regs=["Hammasi"].concat(T.map(function(x){return x.r}).filter(function(v,i,a){return a.indexOf(v)===i}));
+var cur="Hammasi",$=function(i){return document.getElementById(i)};
+function fm(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g," ")}
+function draw(){
+ $("chips").innerHTML=regs.map(function(r){return '<button class="chip" aria-pressed="'+(r===cur)+'" data-r="'+r+'">'+tr(r)+'</button>'}).join("");
+ $("grid").innerHTML=T.map(function(x,i){if(cur!=="Hammasi"&&x.r!==cur)return"";var c=x.c.split(",");
+ return '<article class="card"><div class="art" style="background:linear-gradient(135deg,'+c[0]+','+c[1]+')"><span class="tag">'+tr(x.r)+' · '+tr(x.g)+'</span></div><div class="in"><h3>'+tr(x.n)+'</h3><div class="meta"><span>🗓 '+x.d+' '+tr('kun')+'</span><span>👥 2–40 '+tr('kishi')+'</span></div><p>'+tr(x.t)+'</p><div class="foot"><div class="price">'+fm(x.p)+' '+tr('so\'m')+'<small>'+tr('bir kishi uchun')+'</small></div><a class="btn" href="#yozilish" data-i="'+i+'">'+tr('Yozilish')+'</a></div></div></article>'}).join("");
+}
+fillSel();
+draw();
+document.addEventListener("click",function(e){
+ var c=e.target.closest(".chip");if(c){cur=c.dataset.r;draw();return}
+ var b=e.target.closest("[data-i]");if(b)$("sel").value=b.dataset.i;
+});
+$("f").addEventListener("submit",function(e){e.preventDefault();
+ var d=new FormData(e.target),x=T[d.get("tour")],n=+d.get("n"),sum=x.p*n;
+ var m=msgText(x,d,n,sum);
+ $("msg").textContent=m;$("tg").href="https://t.me/share/url?url=%20&text="+encodeURIComponent(m);
+ var to="shavkatxojauktamov@gmail.com",su=encodeURIComponent("YurTeam: "+tr(x.n)+" — "+d.get("name")),bd=encodeURIComponent(m);
+ $("em").href="mailto:"+to+"?subject="+su+"&body="+bd;
+ $("gm").href="https://mail.google.com/mail/?view=cm&to="+to+"&su="+su+"&body="+bd;
+ e.target.style.display="none";$("ok").style.display="block";$("ok").scrollIntoView({behavior:"smooth",block:"center"});
+});
+setLang(L);</script>
+</body>
+</html>
